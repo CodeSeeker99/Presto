@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Project_SDPD</string>
+    <string name="welcome">WELCOME</string>
+    <string name="WelcomeMessage"> Presto is a music genre identification app made for the SDPD course</string>
+    <string name="presto">Presto</string>
+    <string name="upload_music">Upload Music</string>
+    <string name="genre">Genre</string>
+</resources>
