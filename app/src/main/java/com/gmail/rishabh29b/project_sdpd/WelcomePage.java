@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class WelcomePage extends AppCompatActivity implements View.OnClickListener{
 
     Button nextButton;
+    private FirebaseAuth firebaseAuth;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,14 +22,23 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
 
         nextButton = findViewById(R.id.button);
         nextButton.setOnClickListener(this);
+
+        //FirebaseUser user = firebaseAuth.getCurrentUser();
     }
 
 
     @Override
     public void onClick(View v) {
+        firebaseAuth = FirebaseAuth.getInstance();
         if(v.getId() == R.id.button) {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
+            if (firebaseAuth.getCurrentUser() != null){
+                intent = new Intent(this, MainPage.class);
+                startActivity(intent);
+            }
+            else {
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+            }
         }
     }
 }

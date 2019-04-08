@@ -90,5 +90,17 @@
         app:layout_constraintVertical_bias="0.166"
         app:srcCompat="@drawable/ic_arrow_upward_black_24dp" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="280dp"
+        android:background="@drawable/roundednext_button"
+        android:fontFamily="@font/proxima_regular"
+        android:text="LOGOUT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>
