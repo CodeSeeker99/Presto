@@ -33,7 +33,7 @@ public class MainPage extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.buttonUpload){
-            Intent intent = new Intent(this, Genre.class);
+            Intent intent = new Intent(this, MusicList.class);
             startActivity(intent);
         }
         if(v.getId() == R.id.button2){
