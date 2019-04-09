@@ -1,9 +1,12 @@
 package com.gmail.rishabh29b.project_sdpd;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -73,9 +76,20 @@ public class MusicList extends AppCompatActivity {
         final ArrayList<File> mySong = findSong(Environment.getExternalStorageDirectory());
         items = new String[mySong.size()];
         for (int i=0; i<mySong.size(); i++){
-            items[i] = mySong.get(i).getName().toString().replace(".mp3","").replace(".wav","");
+            items[i] = mySong.get(i).getName().replace(".mp3","").replace(".wav","");
         }
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,items);
         SongList.setAdapter(myAdapter);
+
+        SongList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String songN = SongList.getItemAtPosition(position).toString();
+                startActivity(new Intent(getApplicationContext(),Genre.class).putExtra("Song",mySong).putExtra("songN",songN).putExtra("pos",position));
+
+            }
+        });
     }
+
+
 }
