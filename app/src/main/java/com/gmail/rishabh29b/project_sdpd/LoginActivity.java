@@ -95,10 +95,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()){
-            case R.id.textViewForgotPass:
-                intent = new Intent(this, ForgotPassword.class);
-                startActivity(intent);
-                break;
             case R.id.buttonSignUp:
                 intent = new Intent(this, SignUp.class);
                 startActivity(intent);

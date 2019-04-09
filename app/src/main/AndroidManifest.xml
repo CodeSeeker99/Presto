@@ -22,7 +22,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainPage" />
         <activity android:name=".SignUp" />
-        <activity android:name=".ForgotPassword" />
         <activity android:name=".Genre" />
         <activity android:name=".MusicList"></activity>
     </application>
